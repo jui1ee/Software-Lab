@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Tables</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTable('table1')">Table 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTable('table2')">Table 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showTable('table3')">Table 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="table1">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                    </tr>
+                    <tr>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="table2" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Header A</th>
+                        <th>Header B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data A</td>
+                        <td>Data B</td>
+                    </tr>
+                    <tr>
+                        <td>Data C</td>
+                        <td>Data D</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="table3" style="display: none;">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Header X</th>
+                        <th>Header Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data X</td>
+                        <td>Data Y</td>
+                    </tr>
+                    <tr>
+                        <td>Data Z</td>
+                        <td>Data W</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function showTable(tableId) {
+            var tables = document.querySelectorAll('div[id^="table"]');
+            tables.forEach(table => table.style.display = 'none');
+            document.getElementById(tableId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
